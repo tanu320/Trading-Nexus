@@ -790,15 +790,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                                                           ]),
                                                                                         );
                                                                                       }).toList())))
-                                                                          : Center(
-                                                                              child: Text('No Product added'),
-                                                                            ),
+                                                                          : Padding(
+                                                                            padding: const EdgeInsets.all(12.0),
+                                                                            child: Center(
+                                                                                child: Text('No Product added',style: TextStyle(color: Colors.blue[900],fontWeight: FontWeight.bold),),
+                                                                              ),
+                                                                          ),
                                                                     ]),
                                                                 //  )
                                                               )),
                                                       actions: <Widget>[
                                                         Center(
                                                             child: FlatButton(
+                                                              color: Colors.blue[50],
                                                           child: Text('Ok'),
                                                           textColor:
                                                               Colors.blue[900],
@@ -882,21 +886,27 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                                                               ]),
                                                                                             );
                                                                                           }).toList())))
-                                                                              : Center(
-                                                                                  child: Text('No Product added'),
-                                                                                ),
+                                                                              : Column(
+                                                                                children: [
+                                                                                  SizedBox(height: 20,),
+                                                                                  Text('No Product added',style: TextStyle(color: Colors.blue[900],fontWeight: FontWeight.bold),),
+                                                                                ],
+                                                                              ),
                                                                           Container(
                                                                               padding: EdgeInsets.all(deviceSize.height * 0.014),
                                                                               height: deviceSize.height * 0.1,
                                                                               width: deviceSize.width - deviceSize.height * 0.25,
-                                                                              child: TextField(decoration: InputDecoration(labelText: 'Prodcut'), controller: product))
+                                                                              child: TextField(decoration: InputDecoration(labelText: 'Product'), controller: product))
                                                                         ]),
                                                                     //  )
                                                                   )),
                                                           actions: <Widget>[
                                                             Center(
                                                                 child:
-                                                                    FlatButton(
+                                                                    Padding(
+                                                                      padding: const EdgeInsets.all(12.0),
+                                                                      child: FlatButton(
+                                                                        color: Colors.blue[50],
                                                               child: Text(
                                                                   'Add to list'),
                                                               textColor: Colors
@@ -904,13 +914,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                               onPressed: () {
                                                                 //      setState(() {
                                                                 profile
-                                                                    .setproducts(
-                                                                        product
-                                                                            .text,
-                                                                        false);
+                                                                      .setproducts(
+                                                                          product
+                                                                              .text,
+                                                                          false);
                                                                 //      });
                                                               },
-                                                            )),
+                                                            ),
+                                                                    )),
                                                           ],
                                                           elevation: 24,
                                                           backgroundColor:
@@ -974,6 +985,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                           controller: desc),
                                       actions: <Widget>[
                                         FlatButton(
+                                          color: Colors.blue[50],
                                           child: Text('Cancel'),
                                           textColor: Colors.blue[900],
                                           onPressed: () {
@@ -982,6 +994,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                         ),
                                         FlatButton(
                                           child: Text('Save'),
+                                          color: Colors.blue[50],
                                           textColor: Colors.blue[900],
                                           onPressed: () {
                                             //   setState(() {
@@ -1041,6 +1054,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                           controller: poli),
                                       actions: <Widget>[
                                         FlatButton(
+                                          color: Colors.blue[50],
                                           child: Text('Cancel'),
                                           textColor: Colors.blue[900],
                                           onPressed: () {
@@ -1048,6 +1062,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                           },
                                         ),
                                         FlatButton(
+                                          color: Colors.blue[50],
                                           child: Text('Save'),
                                           textColor: Colors.blue[900],
                                           onPressed: () {
@@ -1109,6 +1124,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       actions: <Widget>[
                                         FlatButton(
                                           child: Text('Cancel'),
+                                          color: Colors.blue[50],
                                           textColor: Colors.blue[900],
                                           onPressed: () {
                                             Navigator.pop(context);
@@ -1116,6 +1132,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                         ),
                                         FlatButton(
                                           child: Text('Save'),
+                                          color: Colors.blue[50],
                                           textColor: Colors.blue[900],
                                           onPressed: () {
                                             //     setState(() {
@@ -1132,8 +1149,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     ));
                           },
                         ))
-                      ]))
-                    ])))))),
+                      ])),
+                      SizedBox(height: 90),
+                    ])
+                    ),
+                    
+                    )
+                    ),
+                    
+                    )
+                    ),
           );
   }
 }
